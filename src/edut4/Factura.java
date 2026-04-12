@@ -3,6 +3,8 @@ public class Factura {
 
 // Aqui empiezo a realizar la refactorización
 
+String palabra = "monitor";
+
 public static double calculaSubtotal(double precioUnidad, int cantidad){
     return precioUnidad * cantidad;
 }
@@ -14,7 +16,22 @@ public static double calculaDescuento(double subtotal, int cantidad){
     return 0;
 }
 
+/**
+ * 
+ * Calcula el precio que vale el total de unidades que se compra aplicando el descuento
+ * 
+ * @param precioUnidad precio del producto
+ * @param cantidad unidades de producto que se venden 
+ * @return precio final de las unidades vendidas
+ */
 public static double calculaTotal(double precioUnidad, int cantidad){
+    double subtotal = calculaSubtotal(precioUnidad, cantidad);
+    double descuento = calculaDescuento(subtotal, cantidad);
+    return subtotal-descuento;
+}
+
+
+public static double calculaTotal2(double precioUnidad, int cantidad){
     double subtotal = calculaSubtotal(precioUnidad, cantidad);
     double descuento = calculaDescuento(subtotal, cantidad);
     return subtotal-descuento;
