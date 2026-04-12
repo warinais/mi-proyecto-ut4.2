@@ -1,0 +1,12 @@
+package edut4;
+import static edut4.Factura.*;
+
+public class EDUT4 {
+
+public static void main(String[] args) { 
+    
+    Cliente cliente = new Cliente ("Jose");
+    imprimeFactura(cliente, 15.0, 12); 
+} 
+    
+}
